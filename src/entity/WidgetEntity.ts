@@ -1,6 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
 
-@Entity ()
+@Entity ( "widgets" )
 export class WidgetEntity {
 
     @PrimaryGeneratedColumn ()

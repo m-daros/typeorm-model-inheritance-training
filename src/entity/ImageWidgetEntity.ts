@@ -1,7 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn } from "typeorm";
 import { WidgetEntity } from "./WidgetEntity";
 
-@Entity ()
+@Entity ( "image_widgets" )
 export class ImageWidgetEntity {
 
     @PrimaryGeneratedColumn ()
