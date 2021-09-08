@@ -7,7 +7,7 @@ export class ImageWidgetEntity {
     @PrimaryGeneratedColumn ()
     id: number;
 
-    @OneToOne ( () => WidgetEntity, { cascade: true } )
+    @OneToOne ( () => WidgetEntity, { cascade: true, onDelete: "CASCADE", onUpdate: "CASCADE" } )
     @JoinColumn ()
     widget: WidgetEntity;
 
