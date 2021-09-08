@@ -10,48 +10,20 @@ export class ModelConverter {
 
     public toTextWidgetEntity = ( widget: TextWidget ): TextWidgetEntity => {
 
-        var widgetEntity = new WidgetEntity ();
         var entity = new TextWidgetEntity ();
-        entity.widget = widgetEntity;
-
-        entity.id              = widget.id;
-        entity.text            = widget.text;
-        entity.widget.name     = widget.name;
-        entity.widget.type     = widget.type;
-        entity.widget.x        = widget.x;
-        entity.widget.y        = widget.y;
-        entity.widget.z        = widget.z;
-        entity.widget.width    = widget.width;
-        entity.widget.height   = widget.height;
-        entity.widget.selected = widget.selected;
-        entity.widget.start    = widget.start;
-        entity.widget.end      = widget.end;
-        entity.widget.visible  = widget.visible;
-        entity.widget.locked   = widget.locked;
+        entity.id     = widget.id;
+        entity.text   = widget.text;
+        entity.widget = this.toEntity ( widget as unknown as Widget );
 
         return entity;
     }
 
     public toImageWidgetEntity = ( widget: ImageWidget ): ImageWidgetEntity => {
 
-        var widgetEntity = new WidgetEntity ();
         var entity = new ImageWidgetEntity ();
-        entity.widget = widgetEntity;
-
-        entity.id              = widget.id;
-        entity.src             = widget.src;
-        entity.widget.name     = widget.name;
-        entity.widget.type     = widget.type;
-        entity.widget.x        = widget.x;
-        entity.widget.y        = widget.y;
-        entity.widget.z        = widget.z;
-        entity.widget.width    = widget.width;
-        entity.widget.height   = widget.height;
-        entity.widget.selected = widget.selected;
-        entity.widget.start    = widget.start;
-        entity.widget.end      = widget.end;
-        entity.widget.visible  = widget.visible;
-        entity.widget.locked   = widget.locked;
+        entity.id     = widget.id;
+        entity.src    = widget.src;
+        entity.widget = this.toEntity ( widget as unknown as Widget );;
 
         return entity;
     }
@@ -140,6 +112,26 @@ export class ModelConverter {
         widget.locked   = entity.locked;
 
         return widget;
+    }
+
+    public toEntity = ( widget: WidgetEntity ): WidgetEntity => {
+
+        var entity = new WidgetEntity ();
+        entity.id       = widget.id;
+        entity.name     = widget.name;
+        entity.type     = widget.type;
+        entity.x        = widget.x;
+        entity.y        = widget.y;
+        entity.z        = widget.z;
+        entity.width    = widget.width;
+        entity.height   = widget.height;
+        entity.selected = widget.selected;
+        entity.start    = widget.start;
+        entity.end      = widget.end;
+        entity.visible  = widget.visible;
+        entity.locked   = widget.locked;
+
+        return entity;
     }
 
     public toWidgets = ( entities: WidgetEntity [] ): Widget [] => {
