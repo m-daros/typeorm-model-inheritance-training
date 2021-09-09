@@ -1,4 +1,6 @@
-# Awesome Project Build with TypeORM
+# typeorm-model-inheritance-training
+
+Experimenting with the persistence of data model inheritance with TypeORM (actually do not support Class Table Inheritance)
 
 Steps to run this project:
 
